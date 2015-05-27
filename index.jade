@@ -7,8 +7,23 @@ block title
 
 block app
   .page
-    .spacer-100
     .container
-      h1 Good morning Mr. President
+      .spacer-40
+      .pure-form
+        h5 Javascript Library
+        p Description
+        input.toselect(type='text', value='//javaspritz.com/cdn/resources.js', readonly)
+      .pure-form
+        h5 Javascript Library
+        p Description
+        input.toselect(type='text', value='//javaspritz.com/cdn/resources.js', readonly)
 
-//-block scripts
+block scripts
+  script.
+    (function () {
+      document.querySelectorAll('.toselect').on('click', function (e) {
+        e.preventDefault();
+        this.select();
+        return false;
+      });
+    })();
